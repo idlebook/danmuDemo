@@ -17,6 +17,7 @@
 		995477F91EAF3902008B1072 /* PMDanmuModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995477F81EAF3902008B1072 /* PMDanmuModelProtocol.swift */; };
 		995477FB1EAF3988008B1072 /* PMDanmuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995477FA1EAF3988008B1072 /* PMDanmuModel.swift */; };
 		995477FD1EAF39D6008B1072 /* PMDanmuBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995477FC1EAF39D6008B1072 /* PMDanmuBackView.swift */; };
+		99E2F9661EB081DC003756EC /* CALayer+Aimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2F9651EB081DC003756EC /* CALayer+Aimate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		995477F81EAF3902008B1072 /* PMDanmuModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMDanmuModelProtocol.swift; sourceTree = "<group>"; };
 		995477FA1EAF3988008B1072 /* PMDanmuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMDanmuModel.swift; sourceTree = "<group>"; };
 		995477FC1EAF39D6008B1072 /* PMDanmuBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMDanmuBackView.swift; sourceTree = "<group>"; };
+		99E2F9651EB081DC003756EC /* CALayer+Aimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Aimate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				995477F81EAF3902008B1072 /* PMDanmuModelProtocol.swift */,
 				995477FA1EAF3988008B1072 /* PMDanmuModel.swift */,
 				995477FC1EAF39D6008B1072 /* PMDanmuBackView.swift */,
+				99E2F9651EB081DC003756EC /* CALayer+Aimate.swift */,
 			);
 			path = danmuDemo;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				995477F91EAF3902008B1072 /* PMDanmuModelProtocol.swift in Sources */,
 				995477CD1EAF382C008B1072 /* ViewController.swift in Sources */,
 				995477CB1EAF382C008B1072 /* AppDelegate.swift in Sources */,
+				99E2F9661EB081DC003756EC /* CALayer+Aimate.swift in Sources */,
 				995477FD1EAF39D6008B1072 /* PMDanmuBackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +519,7 @@
 				995477F11EAF382C008B1072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		995477F21EAF382C008B1072 /* Build configuration list for PBXNativeTarget "danmuDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +528,7 @@
 				995477F41EAF382C008B1072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		995477F51EAF382C008B1072 /* Build configuration list for PBXNativeTarget "danmuDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				995477F71EAF382C008B1072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

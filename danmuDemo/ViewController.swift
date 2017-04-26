@@ -57,6 +57,19 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController{
+    
+    // 恢复
+    @IBAction func resume(_ sender: Any) {
+        danmuBackView.resume()
+    }
+    
+    // 暂停
+    @IBAction func pauseClick(_ sender: Any) {
+        danmuBackView.pause()
+    }
+}
+
 extension ViewController: PMGDanmuBackViewDelegate{
     internal func danmuViewWithModel(model: PMDanmuModel) -> UIView {
         let label = UILabel()

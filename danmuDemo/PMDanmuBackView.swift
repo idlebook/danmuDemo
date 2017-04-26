@@ -46,11 +46,7 @@ class PMDanmuBackView: UIView {
         return laneWaitTimes
     }()
     
-    // 弹幕
-    public lazy var danmuMs: [PMDanmuModel] = {
-        var danmuMs: [PMDanmuModel] = Array()
-        return danmuMs
-    }()
+
     
     fileprivate lazy var danmuViews: [UIView] = {
         var danmuViews: [UIView] = Array()
@@ -58,16 +54,22 @@ class PMDanmuBackView: UIView {
     }()
     
     
-    
     fileprivate lazy var updateTimer: Timer? = {
-        
-        let timer = Timer(timeInterval: kCheckTime, repeats: true, block: { _ in
+        let updateTimer = Timer(timeInterval: kCheckTime, repeats: true, block: { _ in
             self.check()
         })
         
-        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(updateTimer, forMode: .commonModes)
         
-        return timer
+        return updateTimer
+     
+    }()
+    
+    
+    // 弹幕
+    public lazy var danmuMs: [PMDanmuModel] = {
+        var danmuMs: [PMDanmuModel] = Array()
+        return danmuMs
     }()
     
     // MARK:- 系统回调函数
@@ -77,12 +79,49 @@ class PMDanmuBackView: UIView {
     
     deinit {
         self.updateTimer?.invalidate()
-        self.updateTimer = nil
+        updateTimer = nil
     }
     
     
     
 
+}
+
+// MARK:- 对外暴露的方法
+extension PMDanmuBackView{
+    func pause(){
+        if !_isPause{
+            _isPause = true
+            for item in danmuViews{
+                item.layer .pauseAnimate()
+            }
+            
+            // 停止计时器
+            updateTimer?.invalidate()
+            updateTimer = nil
+        }
+        
+    }
+    
+    
+    
+    func resume(){
+        if _isPause{
+            _isPause = false
+            for item in danmuViews{
+                item.layer.resumeAnimate()
+            }
+            // 开启计时器
+            updateTimer = Timer(timeInterval: kCheckTime, repeats: true, block: { _ in
+                self.check()
+            })
+            
+            RunLoop.current.add(updateTimer!, forMode: .commonModes)
+        }
+        
+    }
+    
+    
 }
 
 
