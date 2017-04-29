@@ -55,12 +55,13 @@ class ViewController: UIViewController {
     }
 
 
+
 }
 
 extension ViewController{
     
     // 恢复
-    @IBAction func resume(_ sender: Any) {
+    @IBAction func resumeClick(_ sender: Any) {
         danmuBackView.resume()
     }
     
