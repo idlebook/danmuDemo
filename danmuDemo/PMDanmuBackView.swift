@@ -27,7 +27,7 @@ class PMDanmuBackView: UIView {
     weak var delegate: PMGDanmuBackViewDelegate?
     
     // MARK:- 懒加载
-    // 用于记录各个弹道的剩余存活时间
+    // 用于记录各个弹道的剩余存活时间(在下一个弹幕发射之前最多存活多少时间,也就是离开弹道所需要的时间)
     fileprivate lazy var laneLiveTimes:  [NSNumber] = {
         var laneLiveTimes: [NSNumber] = Array()
         for i in 0..<kLaneCount{
@@ -36,7 +36,7 @@ class PMDanmuBackView: UIView {
         return laneLiveTimes
     }()
     
-    // 用于记录各个弹道的剩余绝对等待时间
+    // 用于记录各个弹道的剩余绝对等待时间(在弹幕没有完全进入弹道的时间,也就是刚开始的时候不能碰撞)
     fileprivate lazy var laneWaitTimes: [NSNumber] = {
         var laneWaitTimes: [NSNumber] = Array()
         for i in 0..<kLaneCount{
@@ -151,7 +151,7 @@ extension PMDanmuBackView{
         print(laneLiveTimes)
         
         
-        // 对弹幕进行排序
+        // 对弹幕进行升序
         danmuMs.sort { (obj1, obj2) -> Bool in
             return obj1.beginTime <= obj2.beginTime
         }
@@ -160,7 +160,7 @@ extension PMDanmuBackView{
         var deleteModels: [NSNumber] = Array()
         for model in danmuMs {
             guard let currentTime = self.delegate?.currentTime() else {return}
-            
+            // 如果没有到达发射时间,那么剩下的也没有办法
             if model.beginTime > currentTime{
                 break
             }
