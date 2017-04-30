@@ -79,6 +79,7 @@ extension ViewController: PMGDanmuBackViewDelegate{
         return label
     }
 
+    /// 获取当前时间,一般为当前进度
     func currentTime() -> TimeInterval {
         struct Holder {
             static var timesCalled = 0.0
