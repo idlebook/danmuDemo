@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         // 添加弹幕View
         danmuBackView = PMDanmuBackView(frame: CGRect(x: 100, y: 10, width: 200, height: 200))
-        danmuBackView.backgroundColor = UIColor.orange
+        danmuBackView.backgroundColor = UIColor.yellow
         danmuBackView.clipsToBounds = true
         
         danmuBackView.delegate = self
